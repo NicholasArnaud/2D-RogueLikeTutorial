@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class MovingObject : MonoBehaviour
@@ -35,7 +34,7 @@ public abstract class MovingObject : MonoBehaviour
 
     protected IEnumerator SmoothMovement(Vector3 end)
     {
-        float sqrRemainingDistance = (transform.position - end).magnitude;
+        float sqrRemainingDistance = (transform.position - end).sqrMagnitude;
 
         while (sqrRemainingDistance > float.Epsilon)
         {
